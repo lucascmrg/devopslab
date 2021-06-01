@@ -12,6 +12,11 @@ before_install:
   -in labdevopscloudlucas-1c5f7563aff7.json.enc -out ../labdevopscloudlucas-1c5f7563aff7.json
   -d
 
+#Build Environments
+os: linux
+dist: xenial
+
+
 jobs:
   include:
     - stage: Build
