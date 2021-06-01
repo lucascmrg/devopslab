@@ -21,11 +21,10 @@ deploy:
   app: devopslab-lucascamargo
   on:
       branch: main
-
-  - provider: gae
-    keyfile: ../labdevopscloudlucas-1c5f7563aff7.json
-    project: labdevopscloudlucas
-    on:
+  provider: gae
+  keyfile: ../labdevopscloudlucas-1c5f7563aff7.json
+  project: labdevopscloudlucas
+  on:
       branch: main
 
 before_install:
