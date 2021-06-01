@@ -12,3 +12,24 @@ install:
 # Defini o script de Teste que deve rodar toda vez que o código for alterado.
 script:
   - python -m unittest -v test
+
+# Definir o Deploy no Heroku
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  edge: true 
+  app: devopslab-lucascamargo
+  on:
+      branch: main
+
+  - provider: gae
+    keyfile: ../labdevopscloudlucas-1c5f7563aff7.json
+    project: labdevopscloudlucas
+    on:
+      branch: main
+
+before_install:
+- openssl aes-256-cbc -K $encrypted_9e7e0a4c6639_key -iv $encrypted_9e7e0a4c6639_iv
+  -in labdevopscloudlucas-1c5f7563aff7.json.enc -out ../labdevopscloudlucas-1c5f7563aff7.json
+  -d
+
