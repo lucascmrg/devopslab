@@ -16,6 +16,8 @@ before_install:
 os: linux
 dist: xenial
 
+install:
+  - pip install flask flask-wtf
 
 jobs:
   include:
@@ -70,5 +72,3 @@ script:
   - python -m unittest -v test || travis_terminate 1;
   - sonar-scanner || travis_terminate 1;
 
-install:                                                                                                                                                                                                                                                                                    
-  - pip install flask flask-wtf
